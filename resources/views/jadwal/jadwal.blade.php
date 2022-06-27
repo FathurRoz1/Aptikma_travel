@@ -139,7 +139,7 @@
                 {data: 'harga', name: 'harga'},
                 {data: 'modal', name: 'modal'},
                 {data: 'laba', name: 'laba'},
-                {data: 'id_vendor', name: 'id_vendor'},
+                {data: 'nama_vendor', name: 'nama_vendor'},
                 {data: 'action', name: 'action', orderable: false, searchable: false},
           ]
       });

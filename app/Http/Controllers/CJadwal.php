@@ -7,6 +7,7 @@ use App\Models\Kota;
 use App\Models\Vendor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;
 
 
@@ -24,7 +25,10 @@ class CJadwal extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = Jadwal::where('deleted',1)->get();
+            $data = DB::table('m_jadwal')
+                    ->join('m_vendor', 'm_jadwal.id_vendor', '=', 'm_vendor.id_vendor')
+                    ->where('m_jadwal.deleted', '=', 1)
+                    ->get();
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
@@ -37,7 +41,18 @@ class CJadwal extends Controller
     
                             return $btn;
                     })
-                    ->rawColumns(['action'])
+                    ->addColumn('asal', function($row){
+                        $asal = Kota::find($row->asal);
+                        return $asal->nama_kota;
+                        
+                    })
+                    ->addColumn('tujuan', function($row){
+                        $tujuan = Kota::find($row->tujuan);
+                        return $tujuan->nama_kota;
+                    })
+
+                    
+                    ->rawColumns(['action','asal', 'tujuan'])
                     ->make(true);
         }
         $vendor = Vendor::all();

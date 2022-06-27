@@ -24,7 +24,7 @@ class CKota extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = Kota::where('deleted',1)->get();
+            $data = Kota::where('deleted','=', 1)->get();
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
