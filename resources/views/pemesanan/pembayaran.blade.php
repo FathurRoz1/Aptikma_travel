@@ -9,16 +9,19 @@
           <div class="col">
             
             <h5>Tujuan Keberangkatan</h5>
-            <h6>Batu</h6>
-            <h6>Jember</h6>
-          </div>
+            <h6>{{$jadwal->asal}}</h6>
+            <p>{{$jadwal->asal_detail}}</p>
+            <h6>{{$jadwal->tujuan}}</h6>
+            <p>{{$jadwal->tujuan_detail}}</p>
+        </div>
           <div class="col">
             <h5>Jadwal Keberangkatan</h5>
-            <h6>sekian</h6>
+            <h6>{{$jadwal->tanggal}}</h6>
+            <h6>{{$jadwal->jam}}</h6>
           </div>
           <div class="col">
             <h5>Penumpang</h5>
-            <h6>1</h6>
+            <h6>{{$jadwal->jumlah_penumpang}}</h6>
           </div>
         </div>
     </div>
@@ -35,48 +38,22 @@
             
             <div class="card">
                 <div class="card-body bg-light">
-                    <form class="form-group row ">
-                        <h6>Pembayaran Instan</h6>
+                    <form class="form-group row " method="GET" action="{{ url('jalandarat/bayar') }}">
+                        @csrf
+
+                        @foreach ($bank as $data)
+                        <h6></h6>
                         <div class="col-3">
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 py-2">
-                                <div class="custom-control custom-radio" onclick="payment('gopay','0','Bulat')">
-                                    <input  data-toggle="collapse" data-target="#collapsegopay" aria-expanded="true" aria-controls="gopay" type="radio" value="gopay" id="gopay" name="payment" class="custom-control-input">
-                                    <label data-toggle="tooltip" data-placement="top" title="GO-PAY" data-original-title="" class="custom-control-label" for="gopay"><img class="pr-2" src="https://payment.tiketux.com/image/payment/gopay.png" width="100px"></label>
-                                </div>
-                            </div>
+                            <div class="form-check">
+                                <input type="hidden" name="id_bank" id="id" value="{{$data->id_bank}}">
+                                <input class="form-check-input" type="radio" name="nama_bank" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                  <img style="width: 100%" src="/logo_bank/{{$data->logo}}" alt="">
+                                </label>
+                              </div>
                         </div>
-                        <div class="col-3">
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 py-2">
-                                <div class="custom-control custom-radio" onclick="payment('gopay','0','Bulat')">
-                                    <input  data-toggle="collapse" data-target="#collapsegopay" aria-expanded="true" aria-controls="gopay" type="radio" value="gopay" id="gopay" name="payment" class="custom-control-input">
-                                    <label data-toggle="tooltip" data-placement="top" title="GO-PAY" data-original-title="" class="custom-control-label" for="gopay"><img class="pr-2" src="https://payment.tiketux.com/image/payment/gopay.png" width="100px"></label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 py-2">
-                                <div class="custom-control custom-radio" onclick="payment('gopay','0','Bulat')">
-                                    <input  data-toggle="collapse" data-target="#collapsegopay" aria-expanded="true" aria-controls="gopay" type="radio" value="gopay" id="gopay" name="payment" class="custom-control-input">
-                                    <label data-toggle="tooltip" data-placement="top" title="GO-PAY" data-original-title="" class="custom-control-label" for="gopay"><img class="pr-2" src="https://payment.tiketux.com/image/payment/gopay.png" width="100px"></label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 py-2">
-                                <div class="custom-control custom-radio" onclick="payment('gopay','0','Bulat')">
-                                    <input  data-toggle="collapse" data-target="#collapsegopay" aria-expanded="true" aria-controls="gopay" type="radio" value="gopay" id="gopay" name="payment" class="custom-control-input">
-                                    <label data-toggle="tooltip" data-placement="top" title="GO-PAY" data-original-title="" class="custom-control-label" for="gopay"><img class="pr-2" src="https://payment.tiketux.com/image/payment/gopay.png" width="100px"></label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-1 form-group">
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 py-2">
-                                <div class="custom-control custom-radio" onclick="payment('gopay','0','Bulat')">
-                                    <input  data-toggle="collapse" data-target="#collapsegopay" aria-expanded="true" aria-controls="gopay" type="radio" value="gopay" id="gopay" name="payment" class="custom-control-input">
-                                    <label data-toggle="tooltip" data-placement="top" title="GO-PAY" data-original-title="" class="custom-control-label" for="gopay"><img class="pr-2" src="https://payment.tiketux.com/image/payment/gopay.png" width="100px"></label>
-                                </div>
-                            </div>
-                        </div>
+                            
+                        @endforeach
                         <div class="col-12 mt-5">
                             <button type="submit" class="btn btn-primary">Selanjutnya</button>
                         </div>

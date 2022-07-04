@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CBank;
+use App\Http\Controllers\CBooking;
 use App\Http\Controllers\CDashboard;
 use App\Http\Controllers\CJadwal;
 use App\Http\Controllers\CKota;
@@ -49,15 +51,28 @@ Route::get('jalandarat/kota/edit/{id}', [CKota::class, 'edit']);
 Route::get('jalandarat/kota/hapus/{id}', [CKota::class, 'destroy']);
 Route::get('jalandarat/kota/detail/{id}', [CKota::class, 'show']);
 
+Route::resource('jalandarat/bank', CBank::class);
+Route::post('jalandarat/bank/tambah', [CBank::class, 'store']);
+Route::get('jalandarat/bank/edit/{id}', [CBank::class, 'edit']);
+Route::get('jalandarat/bank/hapus/{id}', [CBank::class, 'destroy']);
+Route::get('jalandarat/bank/detail/{id}', [CBank::class, 'show']);
+
 /* Route::get('jalandarat/jadwal', [CJadwal::class, 'index']); */
 
 
-Route::get('pilihJadwal', function () {
-    return view('pilih_jadwal/index');
-});
+Route::get('jalandarat', [CBooking::class, 'index']);
+Route::get('jalandarat/pilihJadwal', [CBooking::class, 'search']);
+Route::get('jalandarat/booking', [CBooking::class, 'booking']);
+Route::get('jalandarat/pemesanan', [CBooking::class, 'store']);
+Route::get('jalandarat/bayar', [CBooking::class, 'bayar']);
+
 Route::get('pemesanan', function () {
     return view('pemesanan.pemesanan');
 });
 Route::get('pembayaran', function () {
-    return view('layouts.index');
+    return view('pemesanan.pembayaran');
+});
+
+Route::get('bayar', function () {
+    return view('pemesanan.bank_pembayaran');
 });

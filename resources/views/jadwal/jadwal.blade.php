@@ -71,27 +71,27 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Jam</label>
                         <div class="col-sm-12">
-                            <input type="time" class="form-control" id="jam" name="jam" required>
+                            <input type="time" class="form-control" id="jam" name="jam"  required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Harga</label>
                         <div class="col-sm-12">
-                            <input type="number" class="form-control" id="harga" name="harga" required>
+                            <input type="number" class="form-control numeric" id="harga" name="harga"  onkeydown="return numbersonly(this, event);" onkeyup="PemisahTitik(this);" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Modal</label>
                         <div class="col-sm-12">
-                            <input type="number" class="form-control" id="modal" name="modal" required>
+                            <input type="number" class="form-control numeric" id="modal" name="modal" onkeydown="return numbersonly(this, event);" onkeyup="PemisahTitik(this)" required>
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Laba</label>
                         <div class="col-sm-12">
-                            <input type="number" class="form-control" id="laba" name="laba" required>
+                            <input type="number" class="form-control numeric" id="laba" name="laba"  required readonly>
                         </div>
                     </div>
 
@@ -116,7 +116,10 @@
     </div>
 </div>
 
+
+
 <script type="text/javascript">
+
     $(function () {
        
         $.ajaxSetup({
@@ -213,5 +216,32 @@
       });
        
     });
+    function PemisahTitik(b){
+        var txtFirstNumberValue = document.getElementById('harga').value;
+        var txtSecondNumberValue = document.getElementById('modal').value;
+        txtFirstNumberValue = txtFirstNumberValue.split('.').join('');
+        txtSecondNumberValue = txtSecondNumberValue.split('.').join('');
+        var result = Number(txtFirstNumberValue) - Number(txtSecondNumberValue);
+        
+        if (!isNaN(result)) {
+            document.getElementById('laba').value = convertRupiah(result.toString());
+        }
+    }
+
+    function convertRupiah(angka, prefix) {
+    var number_string = angka.replace(/[^,\d]/g, "").toString(),
+    split  = number_string.split(","),
+    sisa   = split[0].length % 3,
+    rupiah = split[0].substr(0, sisa),
+    ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+ 
+	if (ribuan) {
+		separator = sisa ? "." : "";
+		rupiah += separator + ribuan.join(".");
+	}
+ 
+	rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
+	return prefix == undefined ? rupiah : rupiah ? prefix + rupiah : "";
+    }
   </script>
 @endsection

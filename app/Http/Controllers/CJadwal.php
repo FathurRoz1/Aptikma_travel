@@ -81,7 +81,7 @@ class CJadwal extends Controller
     {
         
         Jadwal::updateOrCreate(['id_jadwal'=> $request->id],
-        ['asal' => $request->asal, 'tujuan' => $request->tujuan, 'titik_kumpul' => $request->titik_kumpul, 'jam' => $request->jam, 'harga' => $request->harga, 'modal' => $request->modal, 'laba' => $request->laba, 'id_vendor' => $request->id_vendor]);
+        ['asal' => $request->asal, 'tujuan' => $request->tujuan, 'titik_kumpul' => $request->titik_kumpul, 'jam' => $request->jam, 'harga' => str_replace(".","",$request->harga), 'modal' => str_replace(".","",$request->modal), 'laba' => str_replace(".","",$request->laba) , 'id_vendor' => $request->id_vendor]);
         
         return response()->json(['success'=>'Data Berhasil Disimpan.']);
     }

@@ -40,6 +40,7 @@
                 <a class="collapse-item" href="{{url('jalandarat/jadwal')}}">Jadwal</a>
                 <a class="collapse-item" href="{{url('jalandarat/kota')}}">Kota</a>
                 <a class="collapse-item" href="{{url('jalandarat/vendor')}}">Vendor</a>
+                <a class="collapse-item" href="{{url('jalandarat/bank')}}">Bank</a>
             </div>
         </div>
     </li>

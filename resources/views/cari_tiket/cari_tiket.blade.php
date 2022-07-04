@@ -12,31 +12,31 @@
             
             <div class="card">
                 <div class="card-body bg-light">
-                    <form class="form-group row ">
-                        
+                    <form class="form-group row" method=POST" action="{{url('jalandarat/pilihJadwal')}}">
+                        @csrf
                         <div class="col-3">
                             <label for="exampleFormControlInput1" class="form-label">Berangkat dari</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
+                            <select class="form-select" aria-label="Default select example" name="asal">
+                                @foreach($kota as $data)
+                                        <option value="<?=$data['id_kota']?>"><?=$data['nama_kota']?></option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-3">
                             <label for="exampleFormControlInput1" class="form-label">Tujuan Ke</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
+                            <select class="form-select" aria-label="Default select example" name="tujuan">
+                                @foreach($kota as $data)
+                                        <option value="<?=$data['id_kota']?>"><?=$data['nama_kota']?></option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-3">
                             <label for="pilihTanggal" class="form-label">Pilih Tanggal</label>
-                            <input type="date" class="form-control" id="pilihTangal" >
+                            <input type="date" class="form-control" id="pilihTangal" name="tanggal">
                         </div>
                         <div class="col-2">
                             <label for="exampleFormControlInput1" class="form-label">Jumlah Penumpang</label>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" name="jumlah_penumpang">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -44,7 +44,7 @@
                         </div>
                         <div class="col-1 form-group">
                             <br>
-                            <button type="button" class="btn btn-success" href="{{url('pilihJadwal')}}">Cari</button>
+                            <button type="submit" class="btn btn-success" href="{{url('pilihJadwal')}}">Cari</button>
                         </div>
                     </form>
                 </div>
