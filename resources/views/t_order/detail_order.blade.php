@@ -99,7 +99,7 @@
                 
             </div>
         </div>
-        <a href="{{url('jalandarat/jadwal')}}" class="btn btn-facebook btn-block"><i
+        <a href="{{url('jalandarat/order')}}" class="btn btn-facebook btn-block"><i
                 class="fab  fa-fw"></i> Kembali</a>
 
     </div>

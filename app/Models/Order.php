@@ -13,4 +13,9 @@ class Order extends Model
     protected $fillable = [
         'tanggal', 'id_jadwal', 'asal', 'tujuan', 'asal_detail', 'tujuan_detail', 'harga', 'modal', 'laba', 'jumlah_penumpang', 'total_harga', 'total_modal', 'total_laba', 'id_vendor', 'nama_pelanggan', 'no_hp_pelanggan', 'email', 'alamat', 
     ];
+
+    public static function order($order)
+    {
+        return self::find($order);
+    }
 }

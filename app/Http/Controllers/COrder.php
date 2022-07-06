@@ -58,9 +58,9 @@ class COrder extends Controller
     public function detailOrder($id)
     {
         $order = Order::find($id);
-        $asal = Kota::where('id_kota', $order->asal)->get();
-        $tujuan = Kota::where('id_kota', $order->tujuan)->get();
-        return view('jadwal.detail_jadwal',['order'=>$order, 'asal'=>$asal, 'tujuan'=>$tujuan]);
+        $asal = Kota::kota($order->asal);
+        $tujuan = Kota::kota($order->asal);
+        return view('t_order.detail_order',['order'=>$order, 'asal'=>$asal, 'tujuan'=>$tujuan]);
 
     }
 }
