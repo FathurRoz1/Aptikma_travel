@@ -55,8 +55,8 @@ class CJadwal extends Controller
                     ->rawColumns(['action','asal', 'tujuan'])
                     ->make(true);
         }
-        $vendor = Vendor::all();
-        $kota = Kota::all();
+        $vendor = Vendor::where('deleted', '=', 1)->get();
+        $kota = Kota::where('deleted', '=', 1)->get();
         
         return view('jadwal.jadwal', ['vendor'=>$vendor, 'kota'=>$kota]);
     }

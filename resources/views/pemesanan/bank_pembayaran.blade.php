@@ -131,15 +131,15 @@
 
                     <div class="row mx-auto mt-4">
                         <div class="col">
-                            <img src="/logo_bank/{{$bank->logo}}" alt="" class="img-fluid" width="50%"><br><br><br>
+                            <img src="/logo_bank/{{$bank->logo}}" alt="" class="img-fluid" width="40%"><br><br><br>
                             <!-- <img src="https://order.doubletworesto.com/img/online-store-closed.gif" alt="" class="img-fluid" width="50%"> -->
                             <div class="badge badge-danger">
-                                Order close right now
+                                check out
                             </div>
                         </div>
                     </div>
                     <div class="mb-5 p-4">
-                        <h4 class="mb-4">Silahkan lakukan pembayaran ke</h4>
+                        <h4 class="mb-4">Silahkan lakukan pembayaran Rp. {{number_format($total_harga)}} ke</h4>
                         <small> Bank : {{ $bank->nama_bank }} <br>
                         Nomor Rekening : {{ $bank->no_rekening }} <br>
                         Atas Nama : {{ $bank->atas_nama }} <br>

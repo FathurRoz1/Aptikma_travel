@@ -30,6 +30,7 @@
         <form class="row g-3" method="GET" action="{{ url('jalandarat/pemesanan') }}">
           @csrf
             <input type="hidden" name="id_jadwal" id="id" value="{{$jadwal->id_jadwal}}">
+            <input type="hidden" name="jam" id="jam" value="{{$jadwal->jam}}">
             <input type="hidden" name="tanggal" id="tanggal" value="{{$tanggal}}">
             <input type="hidden" name="asal" id="asal" value="{{$jadwal->asal}}">
             <input type="hidden" name="tujuan" id="tujuan" value="{{$jadwal->tujuan}}">
@@ -52,7 +53,7 @@
             </div>
             <div class="col-12">
                 <label for="inputAddress" class="form-label">Nomor Handphone</label>
-                <input type="number" class="form-control" id="no_hp_pelanggan" name="no_hp_pelanggan" placeholder="1234 Main St">
+                <input type="number" class="form-control" id="no_hp_pelanggan" name="no_hp_pelanggan" placeholder="">
             </div>
             <div class="col-12">
               <label for="inputAddress2" class="form-label">Alamat</label>

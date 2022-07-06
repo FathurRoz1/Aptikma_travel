@@ -32,7 +32,7 @@
                    <input type="hidden" name="id" id="id">
                    @csrf
                     <div class="form-group">
-                        <label for="title" class="col-sm-2 control-label">Nama Kota</label>
+                        <label for="title" class="col-sm-6 control-label">Nama Kota</label>
                         <div class="col-sm-12">
                             <input type="text" class="form-control" id="nama_kota" name="nama_kota" placeholder="Enter Name" value="" required>
                         </div>

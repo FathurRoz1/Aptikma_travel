@@ -18,7 +18,7 @@ class CBooking extends Controller
      */
     public function index()
     {
-        $kota = Kota::all();
+        $kota = Kota::where('deleted', '=', 1)->get();
         return view('cari_tiket.cari_tiket', ['kota'=>$kota]);
     }
 
@@ -41,25 +41,18 @@ class CBooking extends Controller
     {
         
         $jadwal = Jadwal::where('id_jadwal', $request->id_jadwal)->first();
-        $asal = DB::table('m_jadwal')
-                ->join('m_kota', 'm_jadwal.asal', '=', 'm_kota.id_kota')
-                ->where('id_kota', $jadwal->asal)
-                ->get();
-                
-        $tujuan = DB::table('m_jadwal')
-                ->join('m_kota', 'm_jadwal.tujuan', '=', 'm_kota.id_kota')
-                ->where('id_kota', $jadwal->tujuan)
-                ->get();
+        $asal = Kota::where('id_kota', $jadwal->asal)->first();
+        $tujuan = Kota::where('id_kota', $jadwal->tujuan)->first();
         return view('pemesanan.pemesanan', ['tanggal'=>$request->tanggal, 'jadwal'=>$jadwal, 'jumlah_penumpang'=>$request->jumlah_penumpang, 'asal'=>$asal, 'tujuan'=>$tujuan]);
     }
     
     
-    public function store(Request $request)
+    public function pemesanan(Request $request)
     {
         
         $order = new Order;
         $order->tanggal = $request->tanggal;
-        $order->tanggal = $request->tanggal;
+        $order->jam = $request->jam;
         $order->id_jadwal = $request->id_jadwal;
         $order->asal = $request->asal;
         $order->tujuan = $request->tujuan;
@@ -84,7 +77,7 @@ class CBooking extends Controller
                     ->join('m_jadwal', 't_order.id_jadwal', '=', 'm_jadwal.id_jadwal')
                     ->where('id_order', $order->id_order )
                     ->first();
-        $bank = Bank::all();
+        $bank = Bank::where('deleted', '=', 1)->get();
         return view('pemesanan.pembayaran', ['jadwal'=>$jadwal, 'bank'=>$bank]);
     }
 
@@ -97,7 +90,7 @@ class CBooking extends Controller
     public function bayar(Request $request)
     {
         $bank = Bank::where('id_bank', $request->id_bank)->first();
-        return view('pemesanan.bank_pembayaran', ['bank'=>$bank]);
+        return view('pemesanan.bank_pembayaran', ['bank'=>$bank, 'total_harga'=>$request->total_harga]);
     }
 
     /**

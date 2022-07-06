@@ -41,10 +41,12 @@
                     <form class="form-group row " method="GET" action="{{ url('jalandarat/bayar') }}">
                         @csrf
 
+                        <input type="hidden" name="total_harga" id="id" value="{{$jadwal->total_harga}}">
                         @foreach ($bank as $data)
                         <h6></h6>
                         <div class="col-3">
                             <div class="form-check">
+                              
                                 <input type="hidden" name="id_bank" id="id" value="{{$data->id_bank}}">
                                 <input class="form-check-input" type="radio" name="nama_bank" id="flexRadioDefault1">
                                 <label class="form-check-label" for="flexRadioDefault1">

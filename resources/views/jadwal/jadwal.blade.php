@@ -12,7 +12,7 @@
             <tr>
                 <th>No</th>
                 <th>Asal</th>
-                <th>Tujuan</th>
+                <th>Tujuan </th>
                 <th>Titik Kumpul</th>
                 <th>Jam</th>
                 <th>Harga</th>
