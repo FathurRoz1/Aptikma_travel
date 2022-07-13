@@ -8,6 +8,7 @@ use App\Http\Controllers\CKota;
 use App\Http\Controllers\CLogin;
 use App\Http\Controllers\COrder;
 use App\Http\Controllers\CVendor;
+use App\Http\Controllers\CPenawaran;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -79,3 +80,10 @@ Route::get('pembayaran', function () {
 Route::get('bayar', function () {
     return view('pemesanan.bank_pembayaran');
 });
+
+Route::post('penawaran-save', [CPenawaran::class, 'index']);
+Route::get('penawaran', [CPenawaran::class, 'penawaran']);
+Route::get('penawaran-harga/{id}', [CPenawaran::class, 'harga']);
+Route::get('penawaran/modal/{id}/{id1}', [CPenawaran::class, 'modal']);
+Route::post('penawaran/simpan_detail', [CPenawaran::class, 'simpan_detail']);
+Route::get('penawaran/get-harga-item/{id}', [CPenawaran::class, 'get_harga_item']);
