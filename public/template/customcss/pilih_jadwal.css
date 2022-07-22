@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+    height: 100%;
+}
+.bungkus {  
+    height: 100vh;
+}
+.header {
+    height: 80px;
+    background-color: #0064D2;
+    color: white;
+    padding-left: 1rem;
+}
+.header h4{
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+}
+.jadwal-pilihan {
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+.jadwal-pilihan button{
+    border-radius: 1rem;
+    margin-left: 0.6rem;
+    background-color: #FEDD00;
+    color: #0064D2;
+    margin-top: 1rem;
+}
+.jadwal-pilihan .ubah:hover, .ubah:focus, .ubah:active{
+    color: #0064D2;
+    background-color: #E8CB13;
+    -webkit-transform: scale(1.01);
+    transform: scale(1.01);
+}
+.jadwal-pilihan .asal-tujuan{
+    color: #0064D2;
+    padding-top: 1rem;
+    padding-right: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -1rem;
+}
+.jadwal-pilihan .detail{
+    margin-right: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -1rem;
+}
+.ticket-detail {
+    margin-top: 2rem;
+    position: relative;
+}
+.ticket .judul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ticket-detail .ticket-code{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+hr {
+    border:none;
+    border-top:2px dotted #f00;
+    color:#fff;
+    background-color:#fff;
+    height:1px;
+    width:100%;
+}
+/* Ubah Tiket */
+.search-ticket {
+    border-radius: 1rem;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: -80px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.search-ticket .card-body{
+    border-radius: 1rem;
+
+}
+.card  .cari{
+    width: 100%;
+    background-color: #FEDD00;
+    color: #0064D2;
+    margin-bottom: 10px;
+}
+.card .cari:hover, .cari:focus, .cari:active{
+        
+    -webkit-transform: scale(1.01);
+    transform: scale(1.01);
+}
+.card .input{
+    border: none;
+    color: #0064D2;
+    font-weight: 600;
+    border-bottom: 2px solid silver;
+}
+/* Ubah Tiket Modal */
+.custom-modal{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 33.3%;
+  right: 33.3%;
+  top: 0;
+  width: 33.3%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+.modal-content{
+    position: fixed;
+  bottom: 0;
+  background-color: #fefefe;
+  width: 31.5%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+/* Animation */
+@-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+/* Akhir Ubah TIket Modal */
+/* Akhir Ubah Tiket */
+@media screen and (max-width : 450px) {
+    .jadwal-pilihan{
+        height: 9rem;
+    }
+    .jadwal-pilihan .asal-tujuan{
+        width: 178%;
+    }
+    .jadwal-pilihan .detail{
+        margin-top: 1rem;
+        width: 158%;
+    }
+    .jadwal-pilihan button{
+        width: 85%;
+        border-radius: 1rem;
+        background-color: #FEDD00;
+        color: #0064D2;
+        margin-top: 4.5rem;
+        margin-left: -13.5rem;
+        position: absolute;
+    }
+    .modal-content{
+        width: 93%;
+    }
+    .custom-modal{
+        width: 100%;
+        left: 0;
+    }
+    
+}
+
+@media screen and (max-width : 391px) {
+    .modal-content{
+        width: 93%;
+    }
+    .custom-modal{
+        width: 100%;
+        left: 0;
+    }
+}

@@ -8,28 +8,28 @@
     </div>
     <div class="card-body">
         <div class="form-group">
-            <label for="title" class="col-sm-2 control-label">Nama Pelanggan</label>
+            <label for="title" class="col-sm-6 control-label">Nama Pelanggan</label>
             <div class="col-sm-12">
                 <input type="text" class="form-control" id="titik_kumpul" name="titik_kumpul" required value="{{$order->nama_pelanggan}}" readonly>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="title" class="col-sm-2 control-label">Nomor HP Pelanggan</label>
+            <label for="title" class="col-sm-6 control-label">Nomor HP Pelanggan</label>
             <div class="col-sm-12">
                 <input type="text" class="form-control" id="titik_kumpul" name="titik_kumpul" required value="{{$order->no_hp_pelanggan}}" readonly>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="title" class="col-sm-2 control-label">Email</label>
+            <label for="title" class="col-sm-6 control-label">Email</label>
             <div class="col-sm-12">
                 <input type="text" class="form-control" id="titik_kumpul" name="titik_kumpul" required value="{{$order->email}}" readonly>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="title" class="col-sm-2 control-label">Asal</label>
+            <label for="title" class="col-sm-6 control-label">Asal</label>
             <div class="col-sm-12">
                 <input type="text" class="form-control" id="titik_kumpul" name="titik_kumpul" required value="{{$asal->nama_kota}}" readonly>
             </div>
@@ -50,7 +50,7 @@
         </div>
 
         <div class="form-group">
-            <label for="title" class="col-sm-2 control-label">Detail Alamat Tujuan</label>
+            <label for="title" class="col-sm-6 control-label">Detail Alamat Tujuan</label>
             <div class="col-sm-12">
                 <input type="text" class="form-control" id="titik_kumpul" name="titik_kumpul" required value="{{$order->tujuan_detail}}" readonly>                    
                 
@@ -65,7 +65,7 @@
         </div>
 
         <div class="form-group">
-            <label for="title" class="col-sm-2 control-label">Jumlah Penumpang</label>
+            <label for="title" class="col-sm-6 control-label">Jumlah Penumpang</label>
             <div class="col-sm-12">
                 
                     <input type="text" class="form-control" id="titik_kumpul" name="titik_kumpul" required value="{{$order->jumlah_penumpang}}" readonly>                    
@@ -75,7 +75,7 @@
 
         
         <div class="form-group">
-            <label for="title" class="col-sm-2 control-label">Total Harga</label>
+            <label for="title" class="col-sm-6 control-label">Total Harga</label>
             <div class="col-sm-12">
                 
                     <input type="text" class="form-control" id="titik_kumpul" name="titik_kumpul" required value="{{$order->total_harga}}" readonly>                    
@@ -84,7 +84,7 @@
         </div>
 
         <div class="form-group">
-            <label for="title" class="col-sm-2 control-label">Total Modal</label>
+            <label for="title" class="col-sm-6 control-label">Total Modal</label>
             <div class="col-sm-12">
                 
                     <input type="text" class="form-control" id="titik_kumpul" name="titik_kumpul" required value="{{$order->total_modal}}" readonly>                    
@@ -92,7 +92,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="title" class="col-sm-2 control-label">Total Harga</label>
+            <label for="title" class="col-sm-6 control-label">Total Laba</label>
             <div class="col-sm-12">
                 
                     <input type="text" class="form-control" id="titik_kumpul" name="titik_kumpul" required value="{{$order->total_laba}}" readonly>                    

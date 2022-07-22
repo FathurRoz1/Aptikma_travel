@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+.bungkus {  
+    height: 100vh;
+}
+.header {
+    height: 220px;
+    background-color: #0064D2;
+    
+}
+.caption H4{
+    display: inline-block;
+    color: white;
+    margin-left: 1rem;
+    margin-right: 3rem;
+    margin-top: 3rem
+}
+.search-ticket {
+    border-radius: 1rem;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: -80px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.search-ticket .card-body{
+    border-radius: 1rem;
+
+}
+.card  .cari{
+    width: 100%;
+    background-color: #FEDD00;
+    color: #0064D2;
+    margin-bottom: 10px;
+}
+.card .cari:hover, .cari:focus, .cari:active{
+        
+    -webkit-transform: scale(1.01);
+    transform: scale(1.01);
+}
+.card .input{
+    border: none;
+    color: #0064D2;
+    font-weight: 600;
+    border-bottom: 2px solid silver;
+}
+
+/* navbar */
+nav {
+    width: 33.5%;
+    margin-left: 31.6rem;
+    background-color: white;
+}
+.nav-link {
+    color: #FEDD00;
+}
+.ticket {
+    margin-top: 2rem;
+    margin-bottom: 10rem;
+}
+.ticket .judul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ticket-detail .ticket-code{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+hr {
+    border:none;
+    border-top:2px dotted #f00;
+    color:#fff;
+    background-color:#fff;
+    height:1px;
+    width:100%;
+  }

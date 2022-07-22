@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+.bungkus {  
+    height: 100vh;
+}
+/* Header */
+.header {
+    height: 80px;
+    background-color: #0064D2;
+    color: white;
+    padding-left: 1rem;
+}
+.header h4{
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+}
+/* AKhir Header */
+/* Detail Jadwal */
+.detail-jadwal {
+    
+    border-radius: 1rem;
+    margin-top: 1rem;
+}
+.content-up{
+    margin-top: -1.4rem;
+    margin-left: 2rem;
+}
+.titik_kumpul{
+    margin-top: -1rem;
+    margin-left: 2rem;
+}
+.jadwal_berangkat{
+    margin-top: 1rem;
+}
+.icon {
+    color: #FEDD00;
+}
+/* Akhir Detail jadwal */
+/* Isi Data */
+.isi-data {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+/* Akhir isi Data */
+/* Navbar Bawah */
+.bawah {
+    background-color: #0064D2;
+    z-index: 6;
+    width: 31.7rem;
+    bottom: 0px;
+    position: fixed;
+    
+}
+.bawah .item{
+    color: #FEDD00;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-link {
+    color: #FEDD00;
+    margin-left: 2rem;
+}
+/* Akhir Navbar Bawah */
+@media screen and (max-width : 450px) {
+    
+    .bawah{
+        width: 26rem;
+        position: fixed;
+        bottom: 0px;
+    }
+}
+
+@media screen and (max-width : 390px) {
+    .bawah{
+        width: 24rem;
+        position: fixed;
+        bottom: 0px;
+    }
+    .nav-link {
+        color: #FEDD00;
+        margin-left: 1.5rem;
+    }
+}

@@ -8,6 +8,7 @@ use App\Http\Controllers\CKota;
 use App\Http\Controllers\CLogin;
 use App\Http\Controllers\COrder;
 use App\Http\Controllers\CVendor;
+use Fruitcake\Cors\CorsServiceProvider;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,6 +60,8 @@ Route::get('jalandarat/bank/hapus/{id}', [CBank::class, 'destroy']);
 Route::get('jalandarat/bank/detail/{id}', [CBank::class, 'show']);
 
 Route::get('jalandarat/order', [COrder::class, 'index']);
+Route::post('jalandarat/order/tambah', [COrder::class, 'store']);
+Route::get('jalandarat/order/edit/{id}', [COrder::class, 'edit']);
 Route::get('jalandarat/order/hapus/{id}', [COrder::class, 'destroy']);
 Route::get('jalandarat/order/detail/{id}', [COrder::class, 'detailOrder']);
 
@@ -68,6 +71,7 @@ Route::get('jalandarat/pilihJadwal', [CBooking::class, 'search']);
 Route::get('jalandarat/booking', [CBooking::class, 'booking']);
 Route::get('jalandarat/pemesanan', [CBooking::class, 'pemesanan']);
 Route::get('jalandarat/bayar', [CBooking::class, 'bayar']);
+Route::get('jalandarat/cek-tiket', [CBooking::class, 'cekTiket']);
 
 Route::get('pemesanan', function () {
     return view('pemesanan.pemesanan');

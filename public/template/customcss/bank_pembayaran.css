@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+.bungkus{
+    height: 100vh;
+}
+/* Header */
+.header {
+    height: 80px;
+    background-color: #0064D2;
+    color: white;
+    padding-left: 1rem;
+}
+.header h4{
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+}
+/* AKhir Header */
+.input-control{
+    width: 80%;
+    border: none;
+}
+.whatsapp {
+    margin: 1rem 0 1rem 0;
+    background-color: #0E6A0A;
+    border: none;
+    width: 100%;
+    height: auto;
+    color: white;
+    border-radius: 2rem;
+}
+.kembali {
+    margin: 0.3rem 0 2rem 0;
+    background-color: #0064D2;
+    border: none;
+    width: 100%;
+    height: auto;
+    color: white;
+    border-radius: 2rem;
+}
+/* Navbar Bawah */
+.bawah {
+    background-color: #0064D2;
+    z-index: 6;
+    width: 32rem;
+    bottom: 0px;
+    position: fixed;
+    
+}
+.bawah .item{
+    color: #FEDD00;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-link {
+    color: #FEDD00;
+    margin-left: 2rem;
+}
+/* Akhir Navbar Bawah */
+@media screen and (max-width : 450px) {
+    
+    
+}
+
+@media screen and (max-width : 390px) {
+    
+}

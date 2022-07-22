@@ -1,252 +1,130 @@
 
-@extends('template')
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-@section('container')
-<section class="py-5 reservasi-section mb-5 bg-info">
-    <div class="container">
-        <div class="row ">
-            <div class="col-12 text-center">
-                
-                <h1 class="title-reservasi">Pesan Tiket Travel JATIM !</h1>
-            </div>
-            
-            <div class="card">
-                <div class="card-body bg-light">
-                    <form class="form-group row" method=POST" action="{{url('jalandarat/pilihJadwal')}}">
-                        @csrf
-                        <div class="col-3">
-                            <label for="exampleFormControlInput1" class="form-label">Berangkat dari</label>
-                            <select class="form-select" aria-label="Default select example" name="asal">
-                                @foreach($kota as $data)
-                                        <option value="<?=$data['id_kota']?>"><?=$data['nama_kota']?></option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="col-3">
-                            <label for="exampleFormControlInput1" class="form-label">Tujuan Ke</label>
-                            <select class="form-select" aria-label="Default select example" name="tujuan">
-                                @foreach($kota as $data)
-                                        <option value="<?=$data['id_kota']?>"><?=$data['nama_kota']?></option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="col-3">
-                            <label for="pilihTanggal" class="form-label">Pilih Tanggal</label>
-                            <input type="date" class="form-control" id="pilihTangal" name="tanggal">
-                        </div>
-                        <div class="col-2">
-                            <label for="exampleFormControlInput1" class="form-label">Jumlah Penumpang</label>
-                            <select class="form-select" aria-label="Default select example" name="jumlah_penumpang">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select>
-                        </div>
-                        <div class="col-1 form-group">
-                            <br>
-                            <button type="submit" class="btn btn-success" href="{{url('pilihJadwal')}}">Cari</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            </div>
-    </div>	
-</section>	
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
 
-<section class="mb-5 container-slider-promo" >
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <p class="fs-18 mb-3 color-black font-weight-bold text-middle-spacing"><img src="https://baraya-travel.com/css/baraya_/images/fire.svg" class="pr-3">Spesial Hari Ini </p>
-            </div>
-        </div>
-    </div>
-    <div class="container px-sm-3 px-0">
+    
+    <link rel="stylesheet" href="{{asset('template/customcss/cari_tiket.css')}}">
+    <title>Aptikma Travel</title>
+  </head>
+  <body>
+    <!-- Content -->
+    <div class="row justify-content-center mx-auto">
+      <div class="col-12 col-md-4 px-0 shadow">
+        <div class="header">
+          <div class="caption">
+            <H4 >Pesan tiket travel murah Jawa Timur ! <i class="uil uil-bus-alt"></i> </H4>
+          </div>
+          <div class="logo">
 
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="card">
-                        <div class="card-body bg-light">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <div class="card-body">
-                                          <h5 class="card-title">Card title</h5>
-                                          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                          <a href="#" class="card-link">Card link</a>
-                                          <a href="#" class="card-link">Another link</a>
-                                        </div>
-                                      </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <div class="card-body">
-                                          <h5 class="card-title">Card title</h5>
-                                          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                          <a href="#" class="card-link">Card link</a>
-                                          <a href="#" class="card-link">Another link</a>
-                                        </div>
-                                      </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <div class="card-body">
-                                          <h5 class="card-title">Card title</h5>
-                                          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                          <a href="#" class="card-link">Card link</a>
-                                          <a href="#" class="card-link">Another link</a>
-                                        </div>
-                                      </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <div class="card-body">
-                                          <h5 class="card-title">Card title</h5>
-                                          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                          <a href="#" class="card-link">Card link</a>
-                                          <a href="#" class="card-link">Another link</a>
-                                        </div>
-                                      </div>
-                                </div>
-                              </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item ">
-                    <div class="card">
-                        <div class="card-body bg-light">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <div class="card-body">
-                                          <h5 class="card-title">1</h5>
-                                          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                          <a href="#" class="card-link">Card link</a>
-                                          <a href="#" class="card-link">Another link</a>
-                                        </div>
-                                      </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <div class="card-body">
-                                          <h5 class="card-title">2</h5>
-                                          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                          <a href="#" class="card-link">Card link</a>
-                                          <a href="#" class="card-link">Another link</a>
-                                        </div>
-                                      </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <div class="card-body">
-                                          <h5 class="card-title">3</h5>
-                                          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                          <a href="#" class="card-link">Card link</a>
-                                          <a href="#" class="card-link">Another link</a>
-                                        </div>
-                                      </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <div class="card-body">
-                                          <h5 class="card-title">4</h5>
-                                          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                          <a href="#" class="card-link">Card link</a>
-                                          <a href="#" class="card-link">Another link</a>
-                                        </div>
-                                      </div>
-                                </div>
-                              </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card">
-                        <div class="card-body bg-light">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <div class="card-body">
-                                          <h5 class="card-title">5</h5>
-                                          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                          <a href="#" class="card-link">Card link</a>
-                                          <a href="#" class="card-link">Another link</a>
-                                        </div>
-                                      </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <div class="card-body">
-                                          <h5 class="card-title">6</h5>
-                                          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                          <a href="#" class="card-link">Card link</a>
-                                          <a href="#" class="card-link">Another link</a>
-                                        </div>
-                                      </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <div class="card-body">
-                                          <h5 class="card-title">7</h5>
-                                          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                          <a href="#" class="card-link">Card link</a>
-                                          <a href="#" class="card-link">Another link</a>
-                                        </div>
-                                      </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card" style="width: 18rem;">
-                                        <div class="card-body">
-                                          <h5 class="card-title">Card title</h5>
-                                          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                          <a href="#" class="card-link">Card link</a>
-                                          <a href="#" class="card-link">Another link</a>
-                                        </div>
-                                      </div>
-                                </div>
-                              </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div>
+
+        <!-- Form Pencarian -->
+        <div class="card shadow search-ticket">
+          <div class="card-body bg-white ">
+              <form class="form-group row" method=POST" action="{{url('jalandarat/pilihJadwal')}}">
+                @csrf
+                  <div class="col-6">
+                      <label for="exampleFormControlInput1" class="form-label text-muted">Berangkat dari</label>
+                      <select class="form-select input" aria-label="Default select example" name="asal">
+                        @foreach($kota as $data)
+                            <option value="<?=$data['id_kota']?>"><?=$data['nama_kota']?></option>
+                        @endforeach
+                      </select>
+                  </div>
+                  <div class="col-6">
+                      <label for="exampleFormControlInput1" class="form-label text-muted">Tujuan Ke</label>
+                      <select class="form-select input" aria-label="Default select example" name="tujuan">
+                        @foreach($kota as $data)
+                            <option value="<?=$data['id_kota']?>"><?=$data['nama_kota']?></option>
+                        @endforeach
+                      </select>
+                  </div>
+                  <div class="col-6">
+                      <label for="pilihTanggal" class="form-label text-muted">Pilih Tanggal</label>
+                      <input type="date" class="form-control input" id="pilihTangal" name="tanggal">
+                  </div>
+                  <div class="col-6">
+                      <label for="exampleFormControlInput1" class="form-label text-muted">Jumlah Penumpang</label>
+                      <select class="form-select input" aria-label="Default select example" name="jumlah_penumpang">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                      </select>
+                  </div>
+                  <div class="col-12 form-group">
+                      <br>
+                      <button type="submit" class="btn cari" href="{{url('pilihJadwal')}}">Cari</button>
+                  </div>
+              </form>
+          </div>
+        </div>
+        <!-- Akhir Form Pencarian -->
+        <div class="container " style="margin: 1rem 0 1rem 0">
+          <form action="{{url('jalandarat/cek-tiket')}}">
+            @csrf
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" name="id_order" placeholder="Masukkan kode tiket" aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit" style="padding: 0.5rem 2rem 0.5rem 2rem">Cari</button>
+              </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+          </form>
         </div>
-    </div>
-    <div class="container px-sm-3 px-0">
-        <div class="row mx-0">
-            <div class="col-12 slider-promo px-0">
-                    
+        <!-- Your Ticket -->
+        <div class="container ticket">
+          <div class="judul">
+            <h3>Your Ticket</h3>
+            <a href="">see all</a>
+          </div>
+          <div class="card ticket-detail">
+            <div class="card-body">
+              <div class="ticket-code">
+                <div class="code">
+                  <small class="text-muted">Kode Ticket</small>
+                  <h5>C5634D</h5>
+                </div>
+                <div class="payment-status">
+                  <label for="" class="btn btn-outline-danger disabled">Pending Payment</label>
+                </div>
+              </div>
+              <hr>
+              <div class="details ticket-code">
+                <b style="color: #009DAE">Yogyakarta</b>
+                <b class="text-muted">6jam 43menit</b>
+                <b style="color: #009DAE">Bandung</b>
+              </div>
+              <div class="details ticket-code">
+                <small class="text-muted"> 25 Juli 2022 </small>
+                <small class="text-muted"> 25 Juli 2022 </small>
+              </div>
+              <div class="details ticket-code">
+                <small class="text-muted"> 14:30 WIB </small>
+                <small class="text-muted"> 21:13 WIB </small>
+              </div>
             </div>
-            <form id="promoForm" action="https://baraya-travel.com/book/pemesan" method="POST">
-                <input type="hidden" name="_token" value="0p8jUBF1zON8x0KDO9BVaagGuZkvzeuTGkzCESRQ">
-                <input type="hidden" name="idJadwalPromo" value="">
-                <input type="hidden" name="route" value="beranda">
-            </form>
+          </div>
         </div>
-        <div class="d-none d-md-flex w-100" style="z-index: 0">
-            <i id="prev-slider-promo" class="fs-24 pointer fa fa-chevron-circle-left mr-auto pl-3"></i>
-            <i id="next-slider-promo" class="fs-24 pointer fa fa-chevron-circle-right ml-auto pr-2"></i>
-        </div>
+        <!-- Akhir Your Ticket -->
+      </div>
     </div>
-</section>
-@endsection
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+
+

@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+    height: 100%;
+}
+.bungkus {  
+    height: 100vh;
+}
+/* Header */
+.header {
+    height: 80px;
+    background-color: #0064D2;
+    color: white;
+    padding-left: 1rem;
+}
+.header h4{
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+}
+/* AKhir Header */
+/* Detail Jadwal */
+.detail-jadwal {
+    
+    border-radius: 1rem;
+    margin-top: 1rem;
+}
+.content-up{
+    margin-top: -1.4rem;
+    margin-left: 2rem;
+}
+.titik_kumpul{
+    margin-top: -1rem;
+    margin-left: 2rem;
+}
+.jadwal_berangkat{
+    margin-top: 1rem;
+}
+.icon {
+    color: #FEDD00;
+}
+/* Akhir Detail jadwal */
+/* Pilih pembayaran */
+.pilih-pembayaran{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.custom-dropdown{
+    width: 100%;
+    border-color: transparent;
+    background-color: transparent;
+    
+}
+.isi {
+    margin-left: -0.4rem;
+    margin-top: -0.2rem;
+    margin-right: -0.4rem;
+}
+.jenis-pembayaran{
+    background-color: #0064D2;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+    color: white;
+    justify-content: left;
+    display: flex;
+}
+.logo-bank .logo{
+    margin-top: 0.7rem;
+    margin-bottom: 0.3rem;
+    margin-left: 0.4rem;
+    width: 4rem;
+    display: flex;
+}
+.panah{
+    margin-top: 0.3rem;
+    margin-left: 16rem;
+}
+.dropdown-content{
+    display: block;
+    background-color: white;
+    width: 26.6rem;
+    margin-left: 0.01rem;
+}
+.dropdown-content .logo{
+    width: 4rem;
+}
+.show {display: block;}
+.chose-payment{
+    padding: 0.5rem;
+}
+.atas img {
+    margin: 0 3rem 0 -1rem;
+}
+.atas .harga{
+    margin: -1.5rem -3rem 0 4rem;
+}
+#btn-check{
+    border-color: #0064D2;
+    position: absolute;
+    margin-left: -0.7rem;
+}
+.submit{
+    margin-top: 2rem;
+}
+/* Akhir Pilih Pembayaran */
+/* Navbar Bawah */
+.bawah {
+    background-color: #0064D2;
+    z-index: 6;
+
+    width: 31.7rem;
+    bottom: 0px;
+    position: fixed;
+    
+}
+.bawah .item{
+    color: #FEDD00;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-link {
+    color: #FEDD00;
+    margin-left: 2rem;
+}
+/* Akhir Navbar Bawah */
+
+@media screen and (max-width : 450px) {
+    .custom-dropdown{
+        width: 100%;
+    }
+    .panah{
+        margin-top: 0.3rem;
+        margin-left: 10rem;
+    }
+    .dropdown-content{
+        width: 100%;
+    }
+    .atas .logo-respons{
+        width: 2rem;
+        display: flex;
+        margin: 0 3rem 0 -1.5rem;
+
+    }
+    .nama-bank{
+        font-size: small;
+    }
+    .atas .harga{
+        display: flex;
+        font-size: small;
+        margin: -1rem -5rem 0 1rem;
+    }
+    .bawah{
+        width: 26rem;
+        position: fixed;
+        bottom: 0px;
+    }
+}
+
+@media screen and (max-width : 391px) {
+    .custom-dropdown{
+        width: 100%;
+    }
+    .panah{
+        margin-top: 0.3rem;
+        margin-left: 8rem;
+    }
+    .dropdown-content{
+        width: 100%;
+    }
+    .atas .logo-respons{
+        width: 2rem;
+        display: flex;
+        margin: 0 3rem 0 -1.5rem;
+
+    }
+    .nama-bank{
+        font-size: small;
+    }
+    .atas .harga{
+        display: flex;
+        font-size: small;
+        margin: -1rem -5rem 0 1rem;
+    }
+    .bawah{
+        width: 24rem;
+        position: fixed;
+        bottom: 0px;
+    }
+    .nav-link {
+        color: #FEDD00;
+        margin-left: 1.5rem;
+    }
+}

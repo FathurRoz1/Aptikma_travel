@@ -139,9 +139,9 @@
                 {data: 'tujuan', name: 'tujuan'},
                 {data: 'titik_kumpul', name: 'titik_kumpul'},
                 {data: 'jam', name: 'jam'},
-                {data: 'harga', name: 'harga'},
-                {data: 'modal', name: 'modal'},
-                {data: 'laba', name: 'laba'},
+                {data: 'harga', render: $.fn.dataTable.render.number( '.', ',', 0, 'Rp ' )},
+                {data: 'modal', render: $.fn.dataTable.render.number( '.', ',', 0, 'Rp ' )},
+                {data: 'laba', render: $.fn.dataTable.render.number( '.', ',', 0, 'Rp ' )},
                 {data: 'nama_vendor', name: 'nama_vendor'},
                 {data: 'action', name: 'action', orderable: false, searchable: false},
           ]

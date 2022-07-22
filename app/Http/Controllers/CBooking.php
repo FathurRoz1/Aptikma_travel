@@ -28,7 +28,9 @@ class CBooking extends Controller
         $jadwal = Jadwal::where('asal', $request->asal)
                         ->where('tujuan', $request->tujuan)
                         ->get();
-        return view('pilih_jadwal.pilih_jadwal', ['jumlah'=>$request->jumlah, 'tanggal'=>$request->tanggal, 'jumlah_penumpang'=>$request->jumlah_penumpang, 'jadwal'=>$jadwal, 'kota'=>$kota, 'asal'=>$request->asal, 'tujuan'=>$request->tujuan]);
+        $a = Kota::where('id_kota', $request->asal)->first();
+        $b  = Kota::where('id_kota', $request->tujuan)->first();
+        return view('pilih_jadwal.pilih_jadwal', ['jumlah'=>$request->jumlah, 'tanggal'=>$request->tanggal, 'jumlah_penumpang'=>$request->jumlah_penumpang, 'jadwal'=>$jadwal, 'kota'=>$kota, 'asal'=>$request->asal, 'tujuan'=>$request->tujuan, 'a'=>$a, 'b'=>$b]);
     }
 
     /**
@@ -77,53 +79,25 @@ class CBooking extends Controller
                     ->join('m_jadwal', 't_order.id_jadwal', '=', 'm_jadwal.id_jadwal')
                     ->where('id_order', $order->id_order )
                     ->first();
+        $asal = Kota::where('id_kota', $jadwal->asal)->first();
+        $tujuan = Kota::where('id_kota', $jadwal->tujuan)->first();
         $bank = Bank::where('deleted', '=', 1)->get();
-        return view('pemesanan.pembayaran', ['jadwal'=>$jadwal, 'bank'=>$bank]);
+        return view('pemesanan.pembayaran', ['jadwal'=>$jadwal, 'bank'=>$bank, 'asal'=>$asal, 'tujuan'=>$tujuan]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function bayar(Request $request)
     {
         $bank = Bank::where('id_bank', $request->id_bank)->first();
         return view('pemesanan.bank_pembayaran', ['bank'=>$bank, 'total_harga'=>$request->total_harga]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function cekTiket(Request $request)
     {
-        //
+        $tiket = Order::where('id_order', $request->id_order)->first();
+        $asal = Kota::where('id_kota', $tiket->asal)->first();
+        $tujuan = Kota::where('id_kota', $tiket->tujuan)->first();
+        return view('cari_tiket.cek_tiket', ['tiket'=>$tiket, 'asal'=>$asal, 'tujuan'=>$tujuan]);
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+    
 }
